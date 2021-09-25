@@ -25,14 +25,14 @@ local disabled_color = csgo.color( 225, 25, 25, 255 )
 
 local ref_hide_shot    = menu:get_reference( "Rage", "Aimbot", "Aimbot", "Hide shot" );
 local ref_double_tap   = menu:get_reference( "Rage", "Aimbot", "Aimbot", "Double tap" );
-local ref_force_sp 	   = menu:get_reference( "Rage", "Aimbot", "Aimbot", "Force safepoint" );
-local ref_hs_only 	   = menu:get_reference( "Rage", "Aimbot", "Aimbot", "Headshot only" );
+local ref_force_sp     = menu:get_reference( "Rage", "Aimbot", "Aimbot", "Force safepoint" );
+local ref_hs_only      = menu:get_reference( "Rage", "Aimbot", "Aimbot", "Headshot only" );
 local ref_freestanding = menu:get_reference( "Rage", "Anti-aim", "General", "Freestand" );
 -- [[manual aa]] --
 local ref_aa_override  = menu:get_reference( "Rage", "Anti-aim", "General", "Antiaim override" );
-local ref_aa_back 	   = menu:get_reference( "Rage", "Anti-aim", "General", "Back" );
-local ref_aa_left 	   = menu:get_reference( "Rage", "Anti-aim", "General", "Left" );
-local ref_aa_right 	   = menu:get_reference( "Rage", "Anti-aim", "General", "Right" );
+local ref_aa_back      = menu:get_reference( "Rage", "Anti-aim", "General", "Back" );
+local ref_aa_left      = menu:get_reference( "Rage", "Anti-aim", "General", "Left" );
+local ref_aa_right     = menu:get_reference( "Rage", "Anti-aim", "General", "Right" );
 
 local ref_fake_duck    = menu:get_reference( "Misc", "", "Movement", "Fake duck" );
 local ref_peek_assist  = menu:get_reference( "Misc", "", "Movement", "Peek Assist" );
@@ -61,8 +61,8 @@ local function render( ) -- this is where the "magic" happens
 	-- reset indicator count
 	indicator_count_frame = 0
   -- render all the indicators
-	render_indicator( ref_double_tap, "DT", ref_fake_duck:get_bool(), false, not ref_hide_shot:get_bool( ) )
-	render_indicator( ref_hide_shot, "ST", ref_fake_duck:get_bool(), ref_double_tap, false )
+	render_indicator( ref_double_tap, "DT", ref_fake_duck:get_bool( ), false, not ref_hide_shot:get_bool( ) )
+	render_indicator( ref_hide_shot, "ST", ref_fake_duck:get_bool( ), ref_double_tap, false )
 	render_indicator( ref_fake_duck, "FD", false, false, false )
 	render_indicator( ref_force_sp, "SP", false, false, true )
 	render_indicator( ref_hs_only, "HS", false, false, false )
